@@ -91,7 +91,8 @@ public class Jetpack : MonoBehaviour
                 // handle making the jetpack compensate for character's downward velocity with bonus acceleration
                 totalAcceleration += ((-m_PlayerCharacterController.characterVelocity.y / Time.deltaTime) * jetpackDownwardVelocityCancelingFactor);
             }
-
+            if (!isPlayergrounded())
+                totalAcceleration += 75;
             // apply the acceleration to character's velocity
             m_PlayerCharacterController.characterVelocity += Vector3.up * totalAcceleration * Time.deltaTime;
 
@@ -110,7 +111,7 @@ public class Jetpack : MonoBehaviour
         else
         {
             // refill the meter over time
-            if (isJetpackUnlocked && Time.time - m_LastTimeOfUse >= refillDelay)
+            if (isJetpackUnlocked && Time.time - m_LastTimeOfUse >= refillDelay && isPlayergrounded())
             {
                 float refillRate = 1 / (m_PlayerCharacterController.isGrounded ? refillDurationGrounded : refillDurationInTheAir);
                 currentFillRatio = currentFillRatio + Time.deltaTime * refillRate;
