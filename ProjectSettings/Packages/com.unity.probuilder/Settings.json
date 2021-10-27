@@ -35,11 +35,7 @@
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-<<<<<<< HEAD
-                "key": "editor.toolbarIconGUI",
-=======
                 "key": "editor.autoRecalculateCollisions",
->>>>>>> fb7f890b5a326711236b23d4bf953edb52225da9
                 "value": "{\"m_Value\":false}"
             }
         ]
