@@ -25,7 +25,7 @@ public class ObjectivePickupItem : MonoBehaviour
 
         // this will trigger the objective completion
         // it works even if the player can't pickup the item (i.e. objective pickup healthpack while at full heath)
-        m_Objective.CompleteObjective(string.Empty, string.Empty, "Objective complete : " + m_Objective.title);
+        m_Objective.CompleteObjective(string.Empty, string.Empty, "Objective complete : Pickup Doublejump");
 
         if (gameObject)
         {
